@@ -25,6 +25,11 @@ $understrap_includes = array(
 	'/woocommerce.php',                     // Load WooCommerce functions.
 	'/editor.php',                          // Load Editor functions.
 	'/deprecated.php',                      // Load deprecated functions.
+   /* tolka functions */
+  '/social-widget.php',                  // Social Shares
+  '/acf.php',                            // ACF Contact page
+  '/services-widget.php',                // Widget
+  '/portfolio-cpt.php',                      // CTP
 );
 
 foreach ( $understrap_includes as $file ) {

@@ -71,3 +71,38 @@
     border: 1px solid $gray-200;
   }
 }
+
+
+/* contact form */
+.wpcf7 input, .wpcf7 label textarea {
+    //background-color: $highlight-color;
+    border: 1px solid $highlight-color !important;
+    border-radius: 0 !important;
+    margin-bottom: 10px;
+    background-color: lighten($highlight-color, 30%) !important;
+}
+.wpcf7-submit {
+display: inline !important;
+width: auto !important;
+}
+.wpcf7 input[type=submit] {
+  background-color: $highlight-color !important;
+  color: $white;
+text-transform: uppercase;
+    border-radius: 1.25em!important;
+letter-spacing: 3.5px;
+padding-left: 17px;
+}
+.wpcf7 input[type=submit]:hover, .wpcf7 input[type=submit]:active, .wpcf7 input[type=submit]:focus  {
+  background-color: lighten($highlight-color, 30%) !important;
+  border-color: lighten($highlight-color, 30%) !important;
+  color: $grey-text;
+}
+ .wpcf7 .wpcf7-validation-errors, div.wpcf7-mail-sent-ok {
+margin: 0;
+  border: 1px solid $highlight-color !important;
+    display: flex;
+    justify-content: center;
+  border-radius: .25rem;
+
+}

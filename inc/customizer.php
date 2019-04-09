@@ -99,7 +99,7 @@ if ( ! function_exists( 'understrap_theme_customize_register' ) ) {
 		$wp_customize->add_setting(
 			'understrap_sidebar_position',
 			array(
-				'default'           => 'right',
+				'default'           => 'none',
 				'type'              => 'theme_mod',
 				'sanitize_callback' => 'sanitize_text_field',
 				'capability'        => 'edit_theme_options',

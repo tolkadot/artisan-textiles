@@ -1,1 +1,71 @@
 // This is an empty scss file for your custom styles - Please add your super duper awesome mega design styles here
+
+.navbar {
+background-color: $white;
+ border-radius: 0;
+  @include transition;
+}
+.navbar h1 {
+font-size: 45px;
+line-height: 45px;
+-webkit-transition: all 0.3s ease-out;
+-moz-transition: all 0.3s ease-out;
+-o-transition: all 0.3s ease-out;
+transition: all 0.3s ease-out;
+}
+.navbar .secondary-header {
+-webkit-transition: all 0.3s ease-out;
+-moz-transition: all 0.3s ease-out;
+-o-transition: all 0.3s ease-out;
+transition: all 0.3s ease-out;
+}
+
+.fluid-width-video-wrapper {
+position: relative;
+width: 100%;
+padding-top: 56.25%;
+  iframe {
+position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+}
+
+
+.social-icons {
+font-size: 20px;
+a:first-child {
+  padding: 0px 10px 0px 0px;
+}
+a {
+  padding: 0px 10px;
+}
+a:last-child{
+  padding: 0px 0px 0px 10px;
+}
+}
+
+.affix {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 1030;
+}
+
+.navbar-toggler-icon {
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgb(193, 143, 136)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+}
+
+@media screen and (max-width: 768px) {
+h1.navbar-brand {
+font-size: 28px;
+line-height: 28px;
+}
+.navbar .secondary-header {
+font-size: 19px;
+line-height: 19px;
+}
+}

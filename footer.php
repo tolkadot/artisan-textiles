@@ -16,7 +16,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 
 <?php get_template_part( 'sidebar-templates/sidebar', 'footerfull' ); ?>
 
-<div class="wrapper" id="wrapper-footer">
+<div class="wrapper p-0" id="wrapper-footer">
 
 	<div class="<?php echo esc_attr( $container ); ?>">
 
@@ -26,10 +26,13 @@ $container = get_theme_mod( 'understrap_container_type' );
 
 				<footer class="site-footer" id="colophon">
 
-					<div class="site-info">
-
-						<?php understrap_site_info(); ?>
-
+					<div class="site-info d-flex justify-content-between flex-column flex-md-row">
+          <?php
+          $thisyear = date("Y");
+          $copyright = " Copyright &copy; " . $thisyear . "";
+          ?>
+          <p class="mb-0"><small><?php echo $copyright ?> </small></p>
+          <p class="mb-0"><small>website by <a href="https://tolka.io">tolka</a></small></p>
 					</div><!-- .site-info -->
 
 				</footer><!-- #colophon -->
@@ -45,8 +48,11 @@ $container = get_theme_mod( 'understrap_container_type' );
 </div><!-- #page we need this extra closing tag here -->
 
 <?php wp_footer(); ?>
+<script>
+jQuery( document ).ready( function( $ ) {
 
+});
+</script>
 </body>
 
 </html>
-

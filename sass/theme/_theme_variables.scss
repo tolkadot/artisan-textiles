@@ -4,3 +4,51 @@
 
 
 $primary: #5533ff; // Thats a sample how you could change a BootStrap variable.
+
+
+
+@font-face {
+    font-family: 'Poppins-Regular';
+    src: url(../fonts/Poppins/Poppins-Regular.ttf);
+}
+
+@font-face {
+    font-family: 'Poppins-Bold';
+    src: url(../fonts/Poppins/Poppins-SemiBold.ttf);
+}
+
+@font-face {
+    font-family: 'Poppins-Light';
+    src: url(../fonts/Poppins/Poppins-Light.ttf);
+}
+
+
+@font-face {
+    font-family: 'Poppins-ExtraLight';
+    src: url(../fonts/Poppins/Poppins-ExtraLight.ttf);
+}
+
+@font-face {
+    font-family: 'Poppins-ExtraLight';
+    src: url(../fonts/Poppins/Poppins-ExtraLight.ttf);
+}
+
+
+
+$regular-font: 'Poppins-Regular';
+$light-font: 'Poppins-ExtraLight';
+$bold-font: 'Poppins-Bold';
+
+$grey-text: #636363;
+$lightgrey-text:  #d9d9d9;
+$dark-text: #303133;
+$highlight-color: #C18F88;
+
+
+
+@mixin transition {
+      -webkit-transition: all 0.3s ease-out;
+      -moz-transition: all 0.3s ease-out;
+      -o-transition: all 0.3s ease-out;
+      transition: all 0.3s ease-out;
+}
