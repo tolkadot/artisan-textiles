@@ -9,6 +9,10 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly.
 }
 ?>
+<section>
+<div class="container">
+  <div class="row">
+
 
 <article <?php post_class(); ?> id="post-<?php the_ID(); ?>">
 
@@ -55,3 +59,6 @@ if ( ! defined( 'ABSPATH' ) ) {
 	</footer><!-- .entry-footer -->
 
 </article><!-- #post-## -->
+</div>
+</div>
+</section>

@@ -9,20 +9,16 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly.
 }
 ?>
+<section class="pt-std">
+  <div class="container">
+    <div class="row">
+      <article <?php post_class("w-100"); ?> id="post-<?php the_ID(); ?>">
 
-<article <?php post_class(); ?> id="post-<?php the_ID(); ?>">
+	     <?php echo get_the_post_thumbnail( $post->ID, 'large' ); ?>
 
-	<header class="entry-header">
+	     <div class="entry-content">
 
-		<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
-
-	</header><!-- .entry-header -->
-
-	<?php echo get_the_post_thumbnail( $post->ID, 'large' ); ?>
-
-	<div class="entry-content">
-
-		<?php the_content(); ?>
+		  <?php the_content(); ?>
 
 		<?php
 		wp_link_pages(
@@ -42,3 +38,6 @@ if ( ! defined( 'ABSPATH' ) ) {
 	</footer><!-- .entry-footer -->
 
 </article><!-- #post-## -->
+</div>
+</div>
+</section>

@@ -1,4 +1,3 @@
-// This is an empty scss file for your custom styles - Please add your super duper awesome mega design styles here
 
 /* body {
      background: #000 !important;
@@ -6,26 +5,230 @@
      outline: solid #f00 1px !important;
 } */
 
-.navbar {
-background-color: $white;
- border-radius: 0;
-  @include transition;
+/********************/
+/* Padding & Spacing*/
+/********************/
+//Extra paddding classes
+.wrapper {
+  padding: 0;
 }
-.navbar h1 {
-font-size: 45px;
-line-height: 45px;
--webkit-transition: all 0.3s ease-out;
--moz-transition: all 0.3s ease-out;
--o-transition: all 0.3s ease-out;
-transition: all 0.3s ease-out;
+.prl-50 {
+  padding-right: 50px;
+  padding-left: 50px;
 }
-.navbar .secondary-header {
--webkit-transition: all 0.3s ease-out;
--moz-transition: all 0.3s ease-out;
--o-transition: all 0.3s ease-out;
-transition: all 0.3s ease-out;
+.prl-50 {
+  padding-right: 50px;
+  padding-left: 50px;
+}
+.pt-10 {
+  padding-top: 10px;
+}
+.pt-20 {
+  padding-top: 20px;
+}
+.pt-40 {
+  padding-top: 40px;
+}
+.pt-50 {
+  padding-top: 50px;
+}
+.pt-60 {
+  padding-top: 60px
+}
+.pb-30 {
+  padding-bottom: 30px;
+}
+.pb-20 {
+  padding-bottom: 20px;
+}
+.pb-110 {
+  padding-bottom: 110px;
+}
+.pr-20 {
+  padding-right: 20px;
+}
+//Standard padding classes
+.ptb-std {
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+.pb-std {
+  padding-bottom: 50px;
+}
+.pt-std {
+  padding-top: 50px;
+}
+.pb-std-half{
+  padding-bottom: 25px;
+}
+.pt-std-half{
+  padding-top: 25px;
+}
+ .ptb-std-half{
+  padding-top: 25px;
+  padding-bottom: 25px;
+}
+.empty-space {
+min-height: 25px;
+}
+.ptb-std-hero {
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+.pb-std-hero {
+  padding-bottom: 50px;
 }
 
+
+@include media-breakpoint-up(md) {
+  .ptb-std {
+    padding-top: 100px;
+    padding-bottom: 100px;
+  }
+  .pb-std {
+    padding-bottom: 100px;
+  }
+  .pt-std {
+    padding-top: 100px;
+  }
+  .ptb-std-half{
+   padding-top: 50px;
+   padding-bottom: 50px;
+  }
+  .pb-std-half{
+    padding-bottom: 50px;
+  }
+  .pt-std-half{
+    padding-top: 50px;
+  }
+  .pt-40 {
+    padding-top: 40px;
+  }
+  .empty-space {
+    min-height: 50px;
+  }
+  .pt-40 {
+    padding-top: 40px;
+  }
+  .ptb-std-hero {
+    padding-top: 80px;
+    padding-bottom: 80px;
+  }
+  .pb-std-hero {
+    padding-bottom: 80px;
+  }
+}
+
+.w-250 {
+width: 250px;
+}
+/*******************/
+/* Footer          */
+/*******************/
+.menu-footer-menu-container {
+padding-top: 50px;
+width: 62%;
+margin: auto;
+}
+#wrapper-footer .social-media-icons {
+padding-top: 25px;
+}
+@include media-breakpoint-up(sm) {
+  .menu-footer-menu-container {
+  padding-top: 0px;
+  }
+}
+@include media-breakpoint-up(lg) {
+#wrapper-footer .social-media-icons {
+padding-top: 0;
+}
+}
+#wrapper-footer {
+background: #f0f0f0;
+  a {
+  color: $grey-text;
+}
+}
+
+
+#page-wrapper, #error-404-wrapper {
+min-height: 80VH;
+}
+
+//Header
+.header-cart-count .fa.fa-shopping-bag {
+padding-bottom: 2px;
+padding-right: 5px;
+}
+// Navbar with scroll affect//
+.navbar {
+  @include transition;
+  background-color: $white;
+  padding-top: 0;
+  padding-bottom: 0;
+  border-radius: 0;
+  padding-right: 15px;
+  padding-left: 15px;
+  border-bottom: 3px solid $primary;
+}
+.navbar h1 {
+  font-size: 45px;
+  line-height: 45px;
+  @include transition;
+}
+.navbar .secondary-header {
+  @include transition;
+}
+.navbar-toggler-icon {
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgb(163, 180, 162)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+}
+.affix {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 1030;
+}
+//Navigation - dropdown on hover
+@include media-breakpoint-up(lg) {
+ul.dropdown-menu {
+  display: block;
+  opacity: 0;
+  min-width: 100%;
+  width: 100%;
+  top: 52px;
+  border-top: 3px solid #a3b4a2;
+  border-radius: 0;
+  @include transition;
+   li a {
+  padding: .5rem .5rem;
+  }
+  &.show-dropdown {
+  opacity: 1;
+  }
+}
+}
+
+
+
+@media screen and (max-width: 768px) {
+  .nav-cart-box, .logo-box{
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  h1.navbar-brand {
+  font-size: 28px;
+  line-height: 28px;
+  }
+  .navbar .secondary-header {
+  font-size: 19px;
+  line-height: 19px;
+  }
+}
+
+//Helpers
 .fluid-width-video-wrapper {
 position: relative;
 width: 100%;
@@ -41,37 +244,34 @@ position: absolute;
 
 
 .social-icons {
-font-size: 20px;
-a:first-child {
-  padding: 0px 10px 0px 0px;
-}
-a {
-  padding: 0px 10px;
-}
-a:last-child{
-  padding: 0px 0px 0px 10px;
-}
-}
-
-.affix {
-  position: fixed;
-  top: 0;
-  right: 0;
-  left: 0;
-  z-index: 1030;
+  font-size: 20px;
+  color: $brand-primary;
+  a:first-child {
+    padding: 0px 10px 0px 0px;
+  }
+  a {
+    padding: 0px 10px;
+  }
+  a:last-child{
+    padding: 0px 0px 0px 10px;
+  }
 }
 
-.navbar-toggler-icon {
-  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgb(193, 143, 136)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+
+.home-hero{
+background-image: url('http://artisantextiles.local/wp-content/uploads/2019/05/woman-wearing-summer-dress.jpg');
+background-size: cover;
+background-position: center;
 }
 
-@media screen and (max-width: 768px) {
-h1.navbar-brand {
-font-size: 28px;
-line-height: 28px;
+
+
+
+input{
+border: 1px solid $brand-primary;
+  height: calc(1.5em + .75rem + 2px);
+  padding: .375rem .75rem;
 }
-.navbar .secondary-header {
-font-size: 19px;
-line-height: 19px;
-}
+label {
+margin-bottom: 0;
 }

@@ -20,36 +20,46 @@ $container = get_theme_mod( 'understrap_container_type' );
 
 ?>
 
-<div class="wrapper" id="page-wrapper">
+<div class="wrapper p-0" id="page-wrapper">
 
-	<div class="<?php echo esc_attr( $container ); ?>" id="content" tabindex="-1">
-
-		<div class="row">
-
-			<!-- Do the left sidebar check -->
-			<?php get_template_part( 'global-templates/left-sidebar-check' ); ?>
+	<div class="content" id="content" tabindex="-1">
 
 			<main class="site-main" id="main">
+<!-- First loop - renders woocommerce shortcodes -->
 
-				<?php while ( have_posts() ) : the_post(); ?>
 
-					<?php get_template_part( 'loop-templates/content', 'page' ); ?>
+<!-- Second loop - renders acf content blocks  -->
+    <?php if( get_field('content') ): ?>
+			<?php	while(has_sub_field("content")): ?>
 
-					<?php
-					// If comments are open or we have at least one comment, load up the comment template.
-					if ( comments_open() || get_comments_number() ) :
-						comments_template();
-					endif;
-					?>
+          <?php if(get_row_layout() == "three_column_layout"): //  ?>
+                   <?php get_template_part( 'acf-templates/three-col-layout' ); ?>
 
-				<?php endwhile; // end of the loop. ?>
+            <?php elseif(get_row_layout() == "featured_text"): // ?>
+                     <?php get_template_part( 'acf-templates/featured-content' ); ?>
 
+          <?php elseif(get_row_layout() == "generic_content"): // ?>
+                   <?php get_template_part( 'acf-templates/generic-content' ); ?>
+
+          <?php elseif(get_row_layout() == "padding"): // ?>
+                   <?php get_template_part( 'acf-templates/padding' ); ?>
+
+          <?php elseif(get_row_layout() == "full_width"): // ?>
+                   <?php get_template_part( 'acf-templates/full-width' ); ?>
+        	<?php endif; ?>
+
+      <?php endwhile; ?>
+    <?php else : ?>
+
+    <?php while ( have_posts() ) : the_post(); ?>
+
+    <?php get_template_part( 'loop-templates/content', 'page' ); ?>
+
+    <?php endwhile; // end of the loop. ?>
+
+    <?php endif; ?>
 			</main><!-- #main -->
 
-			<!-- Do the right sidebar check -->
-			<?php get_template_part( 'global-templates/right-sidebar-check' ); ?>
-
-		</div><!-- .row -->
 
 	</div><!-- #content -->
 

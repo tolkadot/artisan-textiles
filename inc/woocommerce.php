@@ -41,7 +41,7 @@ add_action( 'woocommerce_after_main_content', 'understrap_woocommerce_wrapper_en
 if ( ! function_exists( 'understrap_woocommerce_wrapper_start' ) ) {
 	function understrap_woocommerce_wrapper_start() {
 		$container = get_theme_mod( 'understrap_container_type' );
-		echo '<div class="wrapper" id="woocommerce-wrapper">';
+		echo '<div class="wrapper pt-std" id="woocommerce-wrapper">';
 		echo '<div class="' . esc_attr( $container ) . '" id="content" tabindex="-1">';
 		echo '<div class="row">';
 		get_template_part( 'global-templates/left-sidebar-check' );
@@ -138,3 +138,132 @@ if ( ! function_exists( 'understrap_wc_form_field_args' ) ) {
 		return $args;
 	}
 }
+
+//Artisan Textiles mods //
+
+//Single Product Page
+remove_action( 'woocommerce_after_single_product_summary', 'woocommerce_output_product_data_tabs', 10 );
+//remove_action( 'woocommerce_after_single_product_summary', 'woocommerce_upsell_display', 15 );
+remove_action( 'woocommerce_after_single_product_summary', 'woocommerce_output_related_products', 20 );
+remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_meta', 40 );
+remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_excerpt', 20 );
+remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_add_to_cart', 30 );
+add_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_excerpt', 30 );
+add_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_add_to_cart', 20 );
+
+//Archive Product Page
+remove_action( 'woocommerce_before_main_content', 'woocommerce_output_content_wrapper', 10 );
+remove_action( 'woocommerce_before_main_content', 'woocommerce_breadcrumb', 20 );
+remove_action( 'woocommerce_before_shop_loop', 'woocommerce_result_count', 20 );
+remove_action( 'woocommerce_before_shop_loop', 'woocommerce_catalog_ordering', 30 );
+
+//Accounts Page
+add_filter( 'woocommerce_account_menu_items', 'custom_remove_downloads_my_account', 999 );
+
+function custom_remove_downloads_my_account( $items ) {
+unset($items['downloads']);
+return $items;
+}
+
+
+//Show & Update the cart in the header.
+function tolka_wc_show_cart() {
+	  ob_start();
+		global $woocommerce;
+
+		$viewing_cart = __('View your shopping cart', 'your-theme-slug');
+		$cart_url = $woocommerce->cart->get_cart_url();
+		$cart_contents_count = $woocommerce->cart->cart_contents_count;
+		$display_cart = '<div class="header-cart-count show-mobile d-flex justify-content-center align-items-center"><a class="et-cart-info" href="'. $cart_url .'" title="'. $viewing_cart .'">';
+		$display_cart .= '<span class="header-cart-count d-flex justify-content-center align-items-center"><i class="fa fa-shopping-bag" aria-hidden="true"></i><span class="brand-primary ">'. $cart_contents_count . '</span></span>';
+		$display_cart .= '</a></div>';
+
+		echo $display_cart;
+}
+
+add_filter( 'woocommerce_add_to_cart_fragments', 'tolka_cart_count_fragments', 10, 1 );
+function tolka_cart_count_fragments( $fragments ) {
+  $cart_contents_count = WC()->cart->get_cart_contents_count();
+  $fragments['span.header-cart-count'] = '<span class="header-cart-count d-flex justify-content-center align-items-center"><i class="fa fa-shopping-bag" aria-hidden="true"></i><span class="brand-primary ">' . $cart_contents_count. '</span></span>';
+  return $fragments;
+}
+
+
+
+
+//Plus Minus Quantity Buttons @ WooCommerce Single Product Page
+
+add_action( 'woocommerce_after_add_to_cart_quantity', 'bbloomer_display_quantity_minus' );
+
+function bbloomer_display_quantity_minus() {
+   echo '<button type="button" class="plus border-0" ></button><button type="button" class="minus border-0" ></button>';
+}
+
+add_action( 'wp_footer', 'bbloomer_add_cart_quantity_plus_minus' );
+
+function bbloomer_add_cart_quantity_plus_minus() {
+   // Only run this on the single product page
+   if ( ! is_product() ) return;
+   ?>
+      <script type="text/javascript">
+
+      jQuery(document).ready(function($){
+
+         $('form.cart').on( 'click', 'button.plus, button.minus', function() {
+
+            // Get current quantity values
+            var qty = $( this ).closest( 'form.cart' ).find( '.qty' );
+            var val   = parseFloat(qty.val());
+            var max = parseFloat(qty.attr( 'max' ));
+            var min = parseFloat(qty.attr( 'min' ));
+            var step = parseFloat(qty.attr( 'step' ));
+
+            // Change the value if plus or minus
+            if ( $( this ).is( '.plus' ) ) {
+               if ( max && ( max <= val ) ) {
+                  qty.val( max );
+               } else {
+                  qty.val( val + step );
+               }
+            } else {
+               if ( min && ( min >= val ) ) {
+                  qty.val( min );
+               } else if ( val > 1 ) {
+                  qty.val( val - step );
+               }
+            }
+
+         });
+
+      });
+
+      </script>
+   <?php
+}
+//
+
+function crispshop_add_cart_single_ajax() {
+	$product_id = $_POST['product_id'];
+	$variation_id = $_POST['variation_id'];
+	$quantity = $_POST['quantity'];
+
+	if ($variation_id) {
+		WC()->cart->add_to_cart( $product_id, $quantity, $variation_id );
+	} else {
+		WC()->cart->add_to_cart( $product_id, $quantity);
+	}
+    $items = WC()->cart->get_cart();
+    global $woocommerce;
+    $item_count = $woocommerce->cart->cart_contents_count; ?>
+    <?php echo $item_count; ?>
+     <?php die();
+}
+
+add_action('wp_ajax_crispshop_add_cart_single', 'crispshop_add_cart_single_ajax');
+add_action('wp_ajax_nopriv_crispshop_add_cart_single', 'crispshop_add_cart_single_ajax');
+
+
+function understrap_tolka_show_title(){
+ echo "<h1>Password Reset</h1>";
+}
+add_action( 'woocommerce_before_lost_password_form', 'understrap_tolka_show_title', 10 );

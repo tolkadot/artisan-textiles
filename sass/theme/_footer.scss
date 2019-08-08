@@ -1,0 +1,17 @@
+ul#footer-menu, ul.social-media-icons {
+  padding-left: 0;
+  list-style-type: none;
+  li {
+    &:hover {
+    transition: all .15s ease-in-out;
+    padding-left: .25rem;
+    }
+  a {
+  text-decoration: none;
+  }
+  }
+}
+
+ul.social-media-icons .fa {
+font-size: 30px;
+}

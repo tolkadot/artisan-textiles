@@ -1,0 +1,115 @@
+.woocommerce ul.products li.product {
+  text-align: center;
+}
+
+.woocommerce div.product form.cart {
+  position: relative;
+  button:not([type="submit"])  {
+  position: absolute;
+  left: 50px;
+  min-height: 15px;
+  min-width: 15px;
+    &.plus {
+    top: 3px;
+    background-image: url("/wp-content/themes/understrap-tolka-artisan/fonts/chevron-up.svg");
+    background-position: center;
+    background-repeat: no-repeat;
+    }
+    &.minus {
+    bottom: 80px;
+    background-image: url("/wp-content/themes/understrap-tolka-artisan/fonts/chevron-down.svg");
+    background-position: center;
+    background-repeat: no-repeat;
+    }
+  }
+  button:last-child {
+    margin: 1em 0px;
+    min-height: 45px;
+}
+  input[type=number]::-webkit-inner-spin-button,
+  input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+  border: 0;
+  }
+  input[type="number"] {
+    -moz-appearance: textfield;
+    border: 0;
+  }
+}
+
+//Single Product
+.single-product div.product form.cart .quantity {
+    float: none !important;
+    height: 45px;
+    width: 85px;
+    border: 1px solid $brand-primary;
+    display: flex;
+}
+.upsells {
+clear: both;
+}
+
+ .woocommerce-error, .woocommerce-info, .woocommerce-message  {
+  border-top: 0;
+  padding: 1em;
+  &:before {
+  display: none;
+  }
+  a {
+  margin-right: 20px;
+  }
+}
+
+
+.woocommerce form  .form-row label.woocommerce-form__label-for-checkbox {
+  padding-left: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  input {
+  margin-right: 10px;
+  }
+}
+
+//MY ACCOUNT
+.woocommerce-ResetPassword.lost_reset_password {
+  border: 1px solid $brand-primary;
+  padding: 20px;
+  margin: 2em 0;
+  text-align: left;
+  border-radius: 5px;
+}
+
+.woocommerce table.my_account_orders .button {
+  @include button;
+  display: block;
+  margin-bottom: 2px;
+  text-align: center;
+}
+
+.mark, mark {
+background-color: $brand-primary-opacity;
+padding: 0;
+}
+
+nav.woocommerce-MyAccount-navigation {
+margin-bottom: 20px;
+}
+
+
+//Taxonomy styling
+.woocommerce-products-header{
+  text-align: center;
+}
+
+// archive pages
+@media screen and (max-width: 550px){
+.woocommerce ul.products[class*=columns-] li.product,
+.woocommerce-page ul.products[class*=columns-] li.product {
+width: 100%;
+}}
+
+.woocommerce-loop-product__title {
+min-height: 54px;
+}

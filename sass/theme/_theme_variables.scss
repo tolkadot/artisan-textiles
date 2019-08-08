@@ -3,52 +3,84 @@
 // Just copy a variable from src/sass/bootstrap4/_variables.scss, paste it here and edit the value.
 
 
-$primary: #5533ff; // Thats a sample how you could change a BootStrap variable.
+ // Thats a sample how you could change a BootStrap variable.
 
 
 
 @font-face {
-    font-family: 'Poppins-Regular';
-    src: url(../fonts/Poppins/Poppins-Regular.ttf);
+    font-family: 'IBMPlexSans-Regular';
+    src: url(../fonts/IBM_Plex_Sans/IBMPlexSans-Regular.ttf);
 }
 
 @font-face {
-    font-family: 'Poppins-Bold';
-    src: url(../fonts/Poppins/Poppins-SemiBold.ttf);
+    font-family: 'IBMPlexSans-Bold';
+    src: url(../fonts/IBM_Plex_Sans/IBMPlexSans-Bold.ttf);
 }
 
 @font-face {
-    font-family: 'Poppins-Light';
-    src: url(../fonts/Poppins/Poppins-Light.ttf);
+    font-family: 'IBMPlexSans-Light';
+    src: url(../fonts/IBM_Plex_Sans/IBMPlexSans-Light.ttf);
 }
 
-
-@font-face {
-    font-family: 'Poppins-ExtraLight';
-    src: url(../fonts/Poppins/Poppins-ExtraLight.ttf);
-}
 
 @font-face {
     font-family: 'Poppins-ExtraLight';
     src: url(../fonts/Poppins/Poppins-ExtraLight.ttf);
 }
 
+@font-face {
+    font-family: 'Poppins-ExtraLight';
+    src: url(../fonts/Poppins/Poppins-ExtraLight.ttf);
+}
+@font-face {
+    font-family: 'Open Sans Bold';
+    src: url(../fonts/Open_Sans/OpenSans-Bold.ttf);
+}
+
+@font-face {
+    font-family: 'Merriweather';
+    src: url(../fonts/Merriweather/Merriweather-Regular.ttf);
+}
 
 
-$regular-font: 'Poppins-Regular';
-$light-font: 'Poppins-ExtraLight';
-$bold-font: 'Poppins-Bold';
+
+$regular-font: 'IBMPlexSans-Regular';
+$light-font: 'IBMPlexSans-Light';
+$bold-font: 'IBMPlexSans-Bold';
+$logo-font: 'Open Sans Bold';
+$heading-font: 'Merriweather';
 
 $grey-text: #636363;
 $lightgrey-text:  #d9d9d9;
 $dark-text: #303133;
-$highlight-color: #C18F88;
-
-
+$highlight-color: #a3b4a2;
+$brand-primary: #a3b4a2;
+$brand-primary-opacity: rgba(163, 180, 162, .3);
+$primary: #a3b4a2;
+$white: #ffffff;
 
 @mixin transition {
       -webkit-transition: all 0.3s ease-out;
       -moz-transition: all 0.3s ease-out;
       -o-transition: all 0.3s ease-out;
       transition: all 0.3s ease-out;
+}
+
+@mixin button {
+  background-color: $brand-primary;
+  color: $white;
+  font-family: $regular-font;
+  font-weight: 400;
+  text-transform: uppercase;
+  border-radius: 0;
+  font-size: 1rem;
+  letter-spacing: 1.5px;
+  line-height: 1.5;
+  padding: .5rem 1rem;
+  border: 1px solid $brand-primary;
+  transition: all 0.3s ease-out;
+    &:hover {
+    color: $brand-primary;
+    background-color: $white;
+    }
 }
