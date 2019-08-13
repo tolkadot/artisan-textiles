@@ -56,11 +56,108 @@ function toggleDropdown (e) {
 }
 
 $('body')
-  .on('mouseenter mouseleave','.dropdown',toggleDropdown)
-  .on('click', '.dropdown-menu a', toggleDropdown);
+  .on('mouseenter mouseleave','.dropdown>a',toggleDropdown)
+  .on('click', '.dropdown> a', toggleDropdown);
 
 
+  //Moving nav underline
+    var target = document.querySelector(" .nav-moving-target");
+    var links = document.querySelectorAll(" #main-menu .nav-link");
+
+    function mouseenterFunc() {
+      if (!this.parentNode.classList.contains("alive")) {
+        for (var i = 0; i < links.length; i++) {
+          if (links[i].parentNode.classList.contains("alive")) {
+            links[i].parentNode.classList.remove("alive");
+          }
+        }
+        this.parentNode.classList.add("alive");
+
+        var rect = this.getBoundingClientRect();
+        var  width, height, left, top;
+        width = rect.width + 'px';
+        height = rect.height + 'px';
+        left = rect.left + 'px';
+
+        target.style.width = width;
+        target.style.height = height;
+        target.style.left = left;
+        target.style.transform = "none";
+      }
+    }
+
+    function resizeFunc() {
+    var active = $("#main-menu li.nav-item.alive a");
+    var width = $(window).width();
+      if (active) {
+        var rect = active[0].getBoundingClientRect();
+        var left, width;
+        left = rect.left + 'px';
+        width = rect.width + 'px';
+
+        target.style.left = left;
+        target.style.width = width;
+      }
+      if(width < 768) {
+        target.style.display = none;
+      }
+    }
+
+      for (var i = 0; i < links.length; i++) {
+        links[i].addEventListener("mouseenter", mouseenterFunc);
+      }
+      $(window).on("resize", function(){
+        resizeFunc();
+    });
+
+
+    //
+    // var waypoint = new Waypoint({
+    //   element: document.getElementById('featured-text'),
+    //   handler: function() {
+    //     document.getElementById('featured-text').animate({'opacity':'1'},1000);
+    //   }
+    // })
+
+
+
+    $(window).scroll( function(){
+    /* Check the location of each desired element */
+    $('.fade-me-in').each( function(i){
+
+        var bottom_of_object = $(this).position().top + $(this).outerHeight();
+        var bottom_of_window = $(window).scrollTop() + $(window).height();
+        /* If the object is completely visible in the window, fade it it */
+        if( bottom_of_window > (bottom_of_object - 400) ){
+            $(this).animate({'opacity':'1'},1000);
+        }
+      });
+
+        // var docViewTop = $(window).scrollTop();
+        // var docViewBottom = docViewTop + $(window).height();
+        //
+        // var elemTop = $(elem).offset().top;
+        // var elemBottom = elemTop + $(elem).height();
+        // return ((elemBottom <= docViewBottom) && (elemTop >= docViewTop));
+        //
+        // var top_of_object = $(this).position().top;
+        // console.log(top_of_object, $(document).scrollTop());
+        //   if($(document).scrollTop() == top_of_object + 50) {
+        //     $(this).animate({'opacity':'1'},1000);
+        //   }
+
+      //});
+    // });
+
+  });
 });
+
+
+
+
+
+
+
 
 jQuery('.woocommerce div.product form.cart button:last-child').click(function(e) {
 	e.preventDefault();
@@ -92,5 +189,6 @@ jQuery('.woocommerce div.product form.cart button:last-child').click(function(e)
 			}
 		});
 	}
+
 
 });

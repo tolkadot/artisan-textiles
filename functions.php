@@ -28,11 +28,12 @@ $understrap_includes = array(
    /* tolka functions */
   '/tolka/social-widget.php',                  // Social Shares
   '/tolka/acf.php',                            // ACF Contact page
-  '/tolka/services-widget.php',                // Widget
-  '/tolka/portfolio-cpt.php',                  // CTP
+  //'/tolka/services-widget.php',                // Widget
+  //'/tolka/portfolio-cpt.php',                  // CTP
   '/tolka/tolka-extras.php'  ,                  //Developer extras
   '/tolka/customizer-socials.php',
-  '/tolka/display-socials.php'
+  '/tolka/display-socials.php',
+  '/tolka/taxonomy-occasions.php'
 );
 
 foreach ( $understrap_includes as $file ) {

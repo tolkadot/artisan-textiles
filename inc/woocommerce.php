@@ -267,3 +267,25 @@ function understrap_tolka_show_title(){
  echo "<h1>Password Reset</h1>";
 }
 add_action( 'woocommerce_before_lost_password_form', 'understrap_tolka_show_title', 10 );
+
+
+add_filter( 'woocommerce_available_payment_gateways', 'enable_gateway_order_pay' );
+function enable_gateway_order_pay( $available_gateways ) {
+    global $woocommerce;
+    $coupon = $woocommerce->cart->applied_coupons;
+    if ( is_checkout() && ! is_wc_endpoint_url( 'order-pay' ) ) {
+      if (  empty( $coupon ) ) {
+        unset( $available_gateways['cod'] );
+      }
+      else{
+        $cod_enabled = false;
+        if($coupon[0]=='scarfparty') {$cod_enabled = true;}
+        if($coupon[0]=='innercircle') {$cod_enabled = true;}
+        if(!$cod_enabled) {
+            unset( $available_gateways['cod'] );
+        }
+      }
+      }
+
+return $available_gateways;
+}

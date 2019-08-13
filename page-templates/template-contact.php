@@ -35,6 +35,7 @@ $welcome = get_field('contact_welcome');
         </div>
   		   <div class="col-md-6">
           <p class="contact-welcome"> <?php echo $welcome; ?> </p>
+          <?php the_field('contact'); ?>
           <div class="sep-wrapper "><hr class="sep" /></div>
             <div class="contact-deets">
               <?php if($email) { ?>

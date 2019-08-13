@@ -16,6 +16,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 $email = get_field('email', 43);
 $about = get_field('about');
 $image = get_field('image');
+$image2 = get_field('image2');
 $welcome= get_field('about_welcome');
 $size = 'full'; // (thumbnail, medium, large, full or custom size)
 
@@ -48,7 +49,8 @@ $size = 'full'; // (thumbnail, medium, large, full or custom size)
       </div>
 
       <div class="col-md-6">
-          <img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>" />
+          <img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>" class="pb-std-half" />
+          <img src="<?php echo $image2['url']; ?>" alt="<?php echo $image2['alt']; ?>" />
       </div>
 </div>
 </div>

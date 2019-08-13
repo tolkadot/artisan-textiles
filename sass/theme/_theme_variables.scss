@@ -16,22 +16,17 @@
     font-family: 'IBMPlexSans-Bold';
     src: url(../fonts/IBM_Plex_Sans/IBMPlexSans-Bold.ttf);
 }
+@font-face {
+    font-family: 'IBMPlexSans-SemiBold';
+    src: url(../fonts/IBM_Plex_Sans/IBMPlexSans-SemiBold.ttf);
+}
+
 
 @font-face {
     font-family: 'IBMPlexSans-Light';
     src: url(../fonts/IBM_Plex_Sans/IBMPlexSans-Light.ttf);
 }
 
-
-@font-face {
-    font-family: 'Poppins-ExtraLight';
-    src: url(../fonts/Poppins/Poppins-ExtraLight.ttf);
-}
-
-@font-face {
-    font-family: 'Poppins-ExtraLight';
-    src: url(../fonts/Poppins/Poppins-ExtraLight.ttf);
-}
 @font-face {
     font-family: 'Open Sans Bold';
     src: url(../fonts/Open_Sans/OpenSans-Bold.ttf);
@@ -41,14 +36,20 @@
     font-family: 'Merriweather';
     src: url(../fonts/Merriweather/Merriweather-Regular.ttf);
 }
+@font-face {
+    font-family: 'Garramond';
+    src: url(../fonts/Cormorant_Garamond/CormorantGaramond-SemiBold.ttf);
+}
+
 
 
 
 $regular-font: 'IBMPlexSans-Regular';
 $light-font: 'IBMPlexSans-Light';
 $bold-font: 'IBMPlexSans-Bold';
+$semi-bold-font: 'IBMPlexSans-SemiBold';
 $logo-font: 'Open Sans Bold';
-$heading-font: 'Merriweather';
+$heading-font: 'Garramond';
 
 $grey-text: #636363;
 $lightgrey-text:  #d9d9d9;
@@ -56,6 +57,7 @@ $dark-text: #303133;
 $highlight-color: #a3b4a2;
 $brand-primary: #a3b4a2;
 $brand-primary-opacity: rgba(163, 180, 162, .3);
+$brand-primary-opacity-nav: rgba(163, 180, 162, .8);
 $primary: #a3b4a2;
 $white: #ffffff;
 

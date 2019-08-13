@@ -12,6 +12,11 @@ if ( ! defined( 'ABSPATH' ) ) {
 <section class="pt-std">
   <div class="container">
     <div class="row">
+      <div class="col-12">
+        <?php if (is_account_page()) { ?>
+          <h1 class=" contact-header"> Account Page</h1>
+        <?php  } ?>
+
       <article <?php post_class("w-100"); ?> id="post-<?php the_ID(); ?>">
 
 	     <?php echo get_the_post_thumbnail( $post->ID, 'large' ); ?>
@@ -37,7 +42,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 	</footer><!-- .entry-footer -->
 
-</article><!-- #post-## -->
-</div>
+      </article><!-- #post-## -->
+    </div>
+  </div>
 </div>
 </section>

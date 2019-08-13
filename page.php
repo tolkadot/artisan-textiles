@@ -46,7 +46,13 @@ $container = get_theme_mod( 'understrap_container_type' );
 
           <?php elseif(get_row_layout() == "full_width"): // ?>
                    <?php get_template_part( 'acf-templates/full-width' ); ?>
+
+        <?php elseif(get_row_layout() == "two_col_full_width"): // ?>
+                   <?php get_template_part( 'acf-templates/two-col' ); ?>
+        <?php elseif(get_row_layout() == "image_gallery"): // ?>
+                            <?php get_template_part( 'acf-templates/gallery' ); ?>
         	<?php endif; ?>
+
 
       <?php endwhile; ?>
     <?php else : ?>

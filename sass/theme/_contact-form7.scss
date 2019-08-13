@@ -91,7 +91,7 @@ width: auto !important;
 text-transform: uppercase;
     border-radius: 1.25em!important;
 letter-spacing: 3.5px;
-padding-left: 17px;
+  padding: 0px 13px 0px 15px;
 }
 .wpcf7 input[type=submit]:hover, .wpcf7 input[type=submit]:active, .wpcf7 input[type=submit]:focus  {
   background-color: lighten($highlight-color, 30%) !important;

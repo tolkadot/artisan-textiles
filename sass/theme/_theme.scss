@@ -118,9 +118,18 @@ min-height: 25px;
     padding-bottom: 80px;
   }
 }
-
 .w-250 {
 width: 250px;
+}
+
+.std-bg {
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.gradient-bg {
+  background-image: linear-gradient(180deg,rgba(242,227,222,0.24) 75%,#ffffff 100%)!important;
 }
 /*******************/
 /* Footer          */
@@ -169,7 +178,6 @@ padding-right: 5px;
   border-radius: 0;
   padding-right: 15px;
   padding-left: 15px;
-  border-bottom: 3px solid $primary;
 }
 .navbar h1 {
   font-size: 45px;
@@ -198,6 +206,7 @@ ul.dropdown-menu {
   width: 100%;
   top: 52px;
   border-top: 3px solid #a3b4a2;
+  border: 0;
   border-radius: 0;
   @include transition;
    li a {
@@ -259,13 +268,10 @@ position: absolute;
 
 
 .home-hero{
-background-image: url('http://artisantextiles.local/wp-content/uploads/2019/05/woman-wearing-summer-dress.jpg');
+background-image: url('../images/artisan-textiles-hero2.jpg');
 background-size: cover;
 background-position: center;
 }
-
-
-
 
 input{
 border: 1px solid $brand-primary;
@@ -274,4 +280,118 @@ border: 1px solid $brand-primary;
 }
 label {
 margin-bottom: 0;
+}
+
+
+.square-container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.square {
+  position: relative;
+  flex-basis: calc(50% - 10px);
+  box-sizing: border-box;
+}
+.rectangle {
+  position: relative;
+  flex-basis: calc(100% - 20px);
+  box-sizing: border-box;
+}
+
+.square::before,
+.rectangle::before,
+ {
+  content: '';
+  display: block;
+  padding-top: 100%;
+}
+
+.square .content {
+  overflow: hidden;
+  position: absolute;
+  top: 0; left: 0;
+  height: 100%;
+  width: 100%;
+}
+.content img{
+  margin: 15px;
+}
+
+@media (min-width: 992px) {
+.navbar-expand-lg .navbar-nav .nav-link {
+  padding-right: 1rem;
+  padding-left: 1rem;
+}
+}
+
+
+.nav-moving-target {
+    display: block;
+    position: absolute;
+    border-bottom: 2px solid $primary;;
+    transform: translateX(-60px);
+    transition: all .35s ease-in-out;
+    border-color: $primary;
+    z-index: 9;
+    pointer-events: none;
+  }
+  .navbar-nav {
+    li a.nav-link:hover,
+    li.alive a.nav-link{
+    color: $primary;
+    }
+    li.active>a.nav-link {
+    color: $primary;
+    }
+  }
+
+  .dropdown-menu {
+    background-color: $brand-primary-opacity-nav;
+  }
+  .dropdown-item:focus, .dropdown-item:hover {
+    background-color: transparent;
+    text-decoration: underline;
+  }
+
+.fade-me-in {
+    opacity: 0;
+  }
+
+
+/* Blog Post Archive */
+
+.meta span {
+  font-size: .75rem;
+  text-transform: uppercase;
+  &:nth-child(2) {
+  padding: 0px 5px;
+  }
+}
+
+
+.carousel-item {
+  height: 70vh;
+  min-height: 350px;
+  background: no-repeat center center scroll;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+.carousel-item:before {
+content: ' ';
+left: 0;
+top: 0;
+right: 0;
+bottom: 0;
+background-image: -webkit-gradient(linear,left top,left bottom,from(rgba(103,4,251,.4)),to(rgba(103,4,251,.7)));
+background-image: -webkit-linear-gradient(to right, #FF0066 ,#D41872, #A445B2);
+background-image: -moz-linear-gradient(to right, #FF0066 ,#D41872, #A445B2);
+background-image: -o-linear-gradient(to right, #afa9a3 ,#D41872, #A445B2);
+background-image: linear-gradient(to bottom, rgba(235, 226, 217, .1), rgba(235, 226, 217, .1), rgba(68, 66, 64, 1));
+position: absolute;
+width: 100%;
+z-index: 1;
+// opacity: .6;
 }
