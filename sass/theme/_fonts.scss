@@ -126,6 +126,8 @@ h1.product_title {
   color: $primary;
   &:hover {
     border: 1px solid $primary;
+    background-color: $primary;
+    color: $white;
   }
 }
 
