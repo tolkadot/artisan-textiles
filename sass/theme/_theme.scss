@@ -354,10 +354,11 @@ margin-bottom: 0;
     text-decoration: underline;
   }
 
-.fade-me-in {
-    opacity: 0;
-  }
-
+@include media-breakpoint-up(md) {
+  .fade-me-in {
+      opacity: 0;
+    }
+}
 
 /* Blog Post Archive */
 
