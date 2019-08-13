@@ -1,7 +1,9 @@
 jQuery( document ).ready( function( $ ) {
 
+
+//sticky header 
 var toggleAffix = function(affixElement, scrollElement, wrapper) {
-    var height = affixElement.outerHeight(),
+  var height = affixElement.outerHeight(),
         top = wrapper.offset().top;
 
     if (scrollElement.scrollTop() >= top){
@@ -13,7 +15,6 @@ var toggleAffix = function(affixElement, scrollElement, wrapper) {
         wrapper.height('auto');
     }
   };
-
 
   $('[data-toggle="affix"]').each(function() {
     var ele = $(this),
@@ -28,39 +29,30 @@ var toggleAffix = function(affixElement, scrollElement, wrapper) {
     toggleAffix(ele, $(window), wrapper);
   });
 
-window.onscroll = function() {
-  var width = $(window).width();
-  if (width > 768){
-  if (document.body.scrollTop > 65 || document.documentElement.scrollTop > 65) {
-    $('h1.navbar-brand').css('font-size', '25px');
-    $('h1.navbar-brand').css('line-height', '25px');
-    $( ".navbar .secondary-header" ).css( 'font-size', '15px' );
-  } else {
-    $('h1.navbar-brand').css('font-size', '45px');
-    $('h1.navbar-brand').css('line-height', '45px');
-    $( ".navbar .secondary-header" ).css( 'font-size', '25px' );
-  }
-  }
-};
+
+//change logo size on scroll  
+// window.onscroll = function() {
+//   var width = $(window).width();
+//   if (width > 768){
+//   if (document.body.scrollTop > 65 || document.documentElement.scrollTop > 65) {
+//     $('.logo-box').css('width', '200px');
+   
+//   } else {
+//     $('.logo-box').css('width', '450px');
+
+//   }
+//   }
+// };
 
 //Open menu dropdown on hover
-function toggleDropdown (e) {
-  var _d = $(e.target).closest('.dropdown'),
-    _m = $('.dropdown-menu', _d);
-  setTimeout(function(){
-    var shouldOpen = e.type !== 'click' && _d.is(':hover');
-    _m.toggleClass('show-dropdown', shouldOpen);
-    _d.toggleClass('show-dropdown', shouldOpen);
-    $('[data-toggle="dropdown"]', _d).attr('aria-expanded', shouldOpen);
-  }, e.type === 'mouseleave' ? 300 : 0);
-}
-
-$('body')
-  .on('mouseenter mouseleave','.dropdown>a',toggleDropdown)
-  .on('click', '.dropdown> a', toggleDropdown);
+$('ul.navbar-nav li.dropdown').hover(function() {
+  $(this).find('.dropdown-menu').stop(true, true).delay(200).fadeIn(500);
+}, function() {
+  $(this).find('.dropdown-menu').stop(true, true).delay(200).fadeOut(500);
+});
 
 
-  //Moving nav underline
+//Moving nav underline
     var target = document.querySelector(" .nav-moving-target");
     var links = document.querySelectorAll(" #main-menu>li>a.nav-link");
 
@@ -110,7 +102,7 @@ $('body')
         resizeFunc();
     });
 
-
+//fade-in class
   $(window).scroll( function(){
     $('.fade-me-in').each( function(i){
         var bottom_of_object = $(this).position().top + $(this).outerHeight();
