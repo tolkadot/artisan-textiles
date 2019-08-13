@@ -7753,7 +7753,7 @@ window.onscroll = function() {
   }
 };
 
-//Open meny dropdown on hover
+//Open menu dropdown on hover
 function toggleDropdown (e) {
   var _d = $(e.target).closest('.dropdown'),
     _m = $('.dropdown-menu', _d);
@@ -7772,7 +7772,7 @@ $('body')
 
   //Moving nav underline
     var target = document.querySelector(" .nav-moving-target");
-    var links = document.querySelectorAll(" #main-menu .nav-link");
+    var links = document.querySelectorAll(" #main-menu>li>a.nav-link");
 
     function mouseenterFunc() {
       if (!this.parentNode.classList.contains("alive")) {
@@ -7797,7 +7797,7 @@ $('body')
     }
 
     function resizeFunc() {
-    var active = $("#main-menu li.nav-item.alive a");
+    var active = $("#main-menu li.nav-item.alive>a");
     var width = $(window).width();
       if (active) {
         var rect = active[0].getBoundingClientRect();
@@ -7821,54 +7821,20 @@ $('body')
     });
 
 
-    //
-    // var waypoint = new Waypoint({
-    //   element: document.getElementById('featured-text'),
-    //   handler: function() {
-    //     document.getElementById('featured-text').animate({'opacity':'1'},1000);
-    //   }
-    // })
-
-
-
-    $(window).scroll( function(){
-    /* Check the location of each desired element */
+  $(window).scroll( function(){
     $('.fade-me-in').each( function(i){
-
         var bottom_of_object = $(this).position().top + $(this).outerHeight();
         var bottom_of_window = $(window).scrollTop() + $(window).height();
-        /* If the object is completely visible in the window, fade it it */
+
         if( bottom_of_window > (bottom_of_object - 500) ){
             $(this).animate({'opacity':'1'},1000);
         }
       });
-
-        // var docViewTop = $(window).scrollTop();
-        // var docViewBottom = docViewTop + $(window).height();
-        //
-        // var elemTop = $(elem).offset().top;
-        // var elemBottom = elemTop + $(elem).height();
-        // return ((elemBottom <= docViewBottom) && (elemTop >= docViewTop));
-        //
-        // var top_of_object = $(this).position().top;
-        // console.log(top_of_object, $(document).scrollTop());
-        //   if($(document).scrollTop() == top_of_object + 50) {
-        //     $(this).animate({'opacity':'1'},1000);
-        //   }
-
-      //});
-    // });
-
   });
+
 });
 
-
-
-
-
-
-
-
+//JS for up and down arrows on product quantity field.
 jQuery('.woocommerce div.product form.cart button:last-child').click(function(e) {
 	e.preventDefault();
 
