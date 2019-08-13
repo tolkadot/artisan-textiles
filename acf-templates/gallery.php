@@ -33,7 +33,7 @@
         </div>
       </div>
       <div class="col-12 d-flex justify-content-center pt-std-half">
-        <a href="/shop" class="btn-primary text-decoration-none">See more</a>
+      <a class="btn-secondary text-decoration-none " href="/shop">See More</a>
       </div>
     </div>
   </div>
