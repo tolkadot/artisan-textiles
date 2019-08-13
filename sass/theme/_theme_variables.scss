@@ -61,12 +61,19 @@ $brand-primary-opacity-nav: rgba(163, 180, 162, .8);
 $primary: #a3b4a2;
 $white: #ffffff;
 
-@mixin transition {
-      -webkit-transition: all 0.3s ease-out;
-      -moz-transition: all 0.3s ease-out;
-      -o-transition: all 0.3s ease-out;
-      transition: all 0.3s ease-out;
+@mixin transition-time($time) {
+      -webkit-transition: all $time ease-out;
+      -moz-transition: all $time ease-out;
+      -o-transition: all $time ease-out;
+      transition: all $time ease-out;
 }
+@mixin transition{
+    -webkit-transition: all .3s ease-out;
+    -moz-transition: all .3s ease-out;
+    -o-transition: all .3s ease-out;
+    transition: all .3s ease-out;
+}
+
 
 @mixin button {
   background-color: $brand-primary;

@@ -46,9 +46,9 @@ var toggleAffix = function(affixElement, scrollElement, wrapper) {
 
 //Open menu dropdown on hover
 $('ul.navbar-nav li.dropdown').hover(function() {
-  $(this).find('.dropdown-menu').stop(true, true).delay(200).fadeIn(500);
+  $(this).find('.dropdown-menu').stop(true, true).fadeIn(300);
 }, function() {
-  $(this).find('.dropdown-menu').stop(true, true).delay(200).fadeOut(500);
+  $(this).find('.dropdown-menu').stop(true, true).fadeOut(300);
 });
 
 
