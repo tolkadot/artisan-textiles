@@ -121,16 +121,16 @@ $container = get_theme_mod( 'understrap_container_type' );
         <!-- Slide Two - Set the background image for this slide in the line below -->
         <div class="carousel-item" style="background-image: url('http://artisantextiles.local/wp-content/uploads/2019/08/Slider1.jpg')">
           <div class="carousel-caption  text-right">
-            <h2 class="contact-welcome white d-none d-md-block"> Handspun silk.</h2>
-            <p class="white d-none d-md-block">Luxurious, soft & long lasting</p>
+            <h2 class="contact-welcome white d-none d-md-block"> Eco friendly dyes.</h2>
+            <p class="white d-none d-md-block"> Caring for Cambodian rivers.</p>
             <a class="btn-tertiary text-decoration-none " href="/shop">See Collection</a>
           </div>
         </div>
         <!-- Slide Three - Set the background image for this slide in the line below -->
         <div class="carousel-item" style="background-image: url('http://artisantextiles.local/wp-content/uploads/2019/08/Slider2.jpg')">
           <div class="carousel-caption  text-right">
-            <h2 class="contact-welcome white d-none d-md-block">Environmentally friendly dyes</h2>
-            <p class="white d-none d-md-block">Caring for Cambodian rivers</p>
+            <h2 class="contact-welcome white d-none d-md-block">Fairtrade values. </h2>
+            <p class="white d-none d-md-block">Caring for the women who create our textiles.</p>
             <a class="btn-tertiary text-decoration-none " href="/shop">See Collection</a>
           </div>
         </div>
