@@ -32,10 +32,10 @@ ul#main-menu ul.dropdown-menu li a.dropdown-item{
 }
 
 .primary-heading, h1.product_title, .h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6{
-  font-size: 1.5rem;
-  margin-bottom: .5rem;
+  font-size: 1.2rem;
+  margin-bottom: .2rem;
   font-weight: 500;
-  line-height: 1.2;
+  line-height: 1;
   letter-spacing: .01rem;
 }
 h1.product_title {
@@ -50,41 +50,50 @@ h1.product_title {
   letter-spacing: .01rem;
 }
 
-.contact-welcome, h1.woocommerce-products-header__title.page-title, .intro-heading {
+.contact-welcome, 
+h1.woocommerce-products-header__title.page-title, 
+.intro-heading {
   font-family: $light-font;
-  font-size: 30px;
-  line-height: 35px;
+  @include fontSize(30px);
+  @include lineHeight(35px);
   letter-spacing: .01em;
   color: $grey-text;
   font-weight: 400;
 }
-
-@include media-breakpoint-up(md) {
-  .contact-welcome, h1.woocommerce-products-header__title.page-title, .intro-heading {
-    font-size: 45px;
-    line-height: 47px;
-  }
+.contact-welcome {
+  @include fontSize(20px);
+  @include lineHeight(30px);
 }
-
 .contact-header {
-  font-size: 29px;
-  line-height: 40px;
+  @include fontSize(29px);
+  @include lineHeight(40px);
   letter-spacing: .01em;
   color: $brand-primary;
   font-family: $heading-font;
   font-weight: 600;
 }
 
-@media screen and (max-width: 768px) {
-  .contact-welcome {
-    font-size: 20px;
-    line-height: 30px;
+.faq-heading {
+  font-size: 1.777em;
+  line-height: 2em;
+}
+
+@include media-breakpoint-up(md) {
+  .primary-heading, h1.product_title, .h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6{
+    font-size: 1.5rem;
+    margin-bottom: .5rem;
+    font-weight: 500;
+    line-height: 1.2;
+    letter-spacing: .01rem;
   }
-  .contact-header {
-    font-size: 29px;
-    line-height: 40px;
+  .contact-welcome, 
+  h1.woocommerce-products-header__title.page-title, 
+  .intro-heading {
+    @include fontSize(45px);
+    @include lineHeight(47px);
   }
 }
+
 
 //Colours
 .brand-primary {
@@ -107,7 +116,11 @@ h1.product_title {
 }
 
 //buttons
-.btn-outline-primary, .wpcf7 input[type=submit], button, .btn-block, .btn-primary {
+.btn-outline-primary, 
+.wpcf7 input[type=submit], 
+button, 
+.btn-block, 
+.btn-primary {
   @include button;
 }
 .btn-secondary {

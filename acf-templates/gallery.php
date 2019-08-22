@@ -19,13 +19,13 @@
           <div class="content">
             <div class="square-container w-100">
               <div class="square"><div class="content">
-                <img src="<?php echo $image1['url'] ?>" alt="<?php echo $image1['alt'] ?>"/>
+                <img src="<?php echo $image2['url'] ?>" alt="<?php echo $image2['alt'] ?>"/>
               </div></div>
                 <div class="square"><div class="content">
-                  <img src="<?php echo $image1['url'] ?>" alt="<?php echo $image1['alt'] ?>"/>
+                  <img src="<?php echo $image3['url'] ?>" alt="<?php echo $image3['alt'] ?>"/>
                 </div></div>
                 <div class="rectangle"><div class="content">
-                  <img src="<?php echo $image1['url'] ?>" alt="<?php echo $image1['alt'] ?>"/>
+                  <img src="<?php echo $image4['url'] ?>" alt="<?php echo $image4['alt'] ?>"/>
                 </div>
               </div>
             </div>

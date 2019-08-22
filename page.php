@@ -49,9 +49,18 @@ $container = get_theme_mod( 'understrap_container_type' );
 
         <?php elseif(get_row_layout() == "two_col_full_width"): // ?>
                    <?php get_template_part( 'acf-templates/two-col' ); ?>
+
+        <?php elseif(get_row_layout() == "faq"): // ?>
+                     <?php get_template_part( 'acf-templates/FAQ-section' ); ?>
+
         <?php elseif(get_row_layout() == "image_gallery"): // ?>
-                            <?php get_template_part( 'acf-templates/gallery' ); ?>
-        	<?php endif; ?>
+                    <?php get_template_part( 'acf-templates/gallery' ); ?>
+
+        <?php elseif(get_row_layout() == "banner_section"): // ?>
+                    <?php get_template_part( 'acf-templates/Banner-section' ); ?>
+
+        <?php endif; ?>
+          
 
 
       <?php endwhile; ?>

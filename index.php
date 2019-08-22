@@ -32,7 +32,7 @@ $container = get_theme_mod( 'understrap_container_type' );
     <div class="row">
       <div class="col-lg-8 col-md-7 col-sm-12">
         <h1 class="contact-welcome">Notebook</h1>
-        <span class="xs-display-none">Read more about our story and the story of the weavers behind our beautifyl blankets and scarves</span>
+        <span class="xs-display-none">Read more about our story and the story of the weavers behind our beautiful blankets and scarves</span>
         <div class="sep-wrapper "><hr class="sep"></div>
       </div>
     </div>

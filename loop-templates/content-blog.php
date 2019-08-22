@@ -13,7 +13,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 <div class="col-md-6" >
   <article <?php post_class("w-100"); ?> id="post-<?php the_ID(); ?>">
 
-     <?php echo get_the_post_thumbnail( $post->ID, 'large' ); ?>
+     <?php echo get_the_post_thumbnail( $post->ID, 'large' ,array( 'class' => 'w-100' )); ?>
      <div class="meta mt-3"><span class="meta-author"><?php echo $author ?></span><span>|</span><span class="meta-date"><?php echo get_the_date(); ?></span></div>
 
      <div class="post-title"><h3 class="contact-header"><?php the_title(); ?></h3></div>

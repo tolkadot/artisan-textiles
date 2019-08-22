@@ -93,3 +93,23 @@ $white: #ffffff;
     background-color: $white;
     }
 }
+@mixin box-shadow {
+box-shadow: 0 2px 2px -2px rgba(163, 180, 162, .2);
+}
+
+
+@function calculateRem($size) {
+    $remSize: $size / 16px;
+  //Default font size on html element is 100%, equivalent to 16px;
+    @return #{$remSize}rem;
+  }
+  
+  // Mixin that will include the fall back px declaration as well as the calculated rem value.
+  @mixin fontSize($size) {
+    font-size: $size;
+    font-size: calculateRem($size);
+  }
+  @mixin lineHeight($size) {
+    line-height: $size;
+    line-height: calculateRem($size);
+  }
