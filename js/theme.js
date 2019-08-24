@@ -7755,10 +7755,10 @@ var toggleAffix = function(affixElement, scrollElement, wrapper) {
 // };
 
 //Open menu dropdown on hover
-$('ul.navbar-nav li.dropdown').hover(function() {
-  $(this).find('.dropdown-menu').stop(true, true).fadeIn(300);
+$('ul#main-menu>li.dropdown').hover(function() {
+  $(this).find('.dropdown-menu').fadeIn(300);
 }, function() {
-  $(this).find('.dropdown-menu').stop(true, true).fadeOut(300);
+  $(this).find('.dropdown-menu').fadeOut(300);
 });
 
 
