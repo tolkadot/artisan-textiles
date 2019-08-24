@@ -1,4 +1,4 @@
-<section id="featured-text" class= "featured-text ptb-std gradient-bg fade-me-in">
+<section class= "featured-text pt-std-half pb-std gradient-bg">
   <div class="container">
   <div class="row">
     <div class="col-12 col-md-10 offset-md-1 px-md-0">
