@@ -50,6 +50,12 @@ h1.product_title {
   letter-spacing: .01rem;
 }
 
+.pull-text {
+  font-family: $light-font;
+  font-size: 2.2rem;
+  line-height: 1.1;
+}
+
 .contact-welcome, 
 h1.woocommerce-products-header__title.page-title, 
 .intro-heading {

@@ -222,8 +222,6 @@ ul.dropdown-menu {
   z-index: 3
 }
 
-
-
 @media screen and (max-width: 768px) {
   .nav-cart-box, .logo-box{
     width: 100%;
@@ -272,18 +270,18 @@ position: absolute;
 
 
 .home-hero{
-background-image: url('../images/artisan-textiles-hero2.jpg');
-background-size: cover;
-background-position: center;
+  background-image: url('../images/artisan-textiles-hero2.jpg');
+  background-size: cover;
+  background-position: center;
 }
 
 input{
-border: 1px solid $brand-primary;
+  border: 1px solid $brand-primary;
   height: calc(1.5em + .75rem + 2px);
   padding: .375rem .75rem;
 }
 label {
-margin-bottom: 0;
+  margin-bottom: 0;
 }
 
 
@@ -421,4 +419,17 @@ z-index: 1;
 
 .collapsed .faq-heading:before {
   content: "\f196";
+}
+
+/*home page */
+.two-col-feature-image .std-bg{
+  background-size: contain;
+  min-height: 300px;
+}
+
+@media (min-width: 768px) {
+  .two-col-feature-image .std-bg{
+    min-height: 650px;
+    background-size: cover;
+  }
 }
