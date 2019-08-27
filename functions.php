@@ -19,21 +19,21 @@ $understrap_includes = array(
 	'/hooks.php',                           // Custom hooks.
 	'/extras.php',                          // Custom functions that act independently of the theme templates.
 	'/customizer.php',                      // Customizer additions.
-	'/custom-comments.php',                 // Custom Comments file.
-	'/jetpack.php',                         // Load Jetpack compatibility file.
+	// '/custom-comments.php',                 // Custom Comments file.
+	// '/jetpack.php',                         // Load Jetpack compatibility file.
 	'/class-wp-bootstrap-navwalker.php',    // Load custom WordPress nav walker.
 	'/woocommerce.php',                     // Load WooCommerce functions.
 	'/editor.php',                          // Load Editor functions.
 	'/deprecated.php',                      // Load deprecated functions.
-   /* tolka functions */
-  '/tolka/social-widget.php',                  // Social Shares
-  '/tolka/acf.php',                            // ACF Contact page
-  //'/tolka/services-widget.php',                // Widget
-  //'/tolka/portfolio-cpt.php',                  // CTP
-  '/tolka/tolka-extras.php'  ,                  //Developer extras
-  '/tolka/customizer-socials.php',
-  '/tolka/display-socials.php',
-  '/tolka/taxonomy-occasions.php'
+    /* tolka functions */
+	'/tolka/social-widget.php',                  // Social Shares
+	'/tolka/acf.php',                            // ACF Contact page
+	//'/tolka/services-widget.php',                // Widget
+	//'/tolka/portfolio-cpt.php',                  // CTP
+	'/tolka/tolka-extras.php'  ,                  //Developer extras
+	'/tolka/customizer-socials.php',
+	'/tolka/display-socials.php',
+	'/tolka/taxonomy-occasions.php'
 );
 
 foreach ( $understrap_includes as $file ) {
@@ -43,13 +43,3 @@ foreach ( $understrap_includes as $file ) {
 	}
 	require_once $filepath;
 }
-
-// public function bulk_edit_options() {
-// 		$option = 'per_page';
-// 		$args   = array(
-// 			'label'   => __( 'Posts', 'wordpress-seo' ),
-// 			'default' => 10,
-// 			'option'  => 'wpseo_posts_per_page',
-// 		);
-// 		add_screen_option( $option, $args );
-// 	}
