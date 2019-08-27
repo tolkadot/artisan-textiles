@@ -111,7 +111,7 @@ $container = get_theme_mod( 'understrap_container_type' );
       </ol> -->
       <div class="carousel-inner" role="listbox">
         <!-- Slide One - Set the background image for this slide in the line below -->
-        <div class="carousel-item active" style="background-image: url('http://artisantextiles.local/wp-content/uploads/2019/08/artisan-textiles-hero.jpg')">
+        <div class="carousel-item active" style="background-image: url('/wp-content/uploads/2019/08/artisan-textiles-hero.jpg')">
           <div class="carousel-caption text-right">
             <h2 class="contact-welcome white">A gift that gives back.</h2>
             <p class="white">Handmade, Ethical & Sustainable.</p>
@@ -119,7 +119,7 @@ $container = get_theme_mod( 'understrap_container_type' );
           </div>.
         </div>
         <!-- Slide Two - Set the background image for this slide in the line below -->
-        <div class="carousel-item" style="background-image: url('http://artisantextiles.local/wp-content/uploads/2019/08/Slider1.jpg')">
+        <div class="carousel-item" style="background-image: url('/wp-content/uploads/2019/08/Slider1.jpg')">
           <div class="carousel-caption  text-right">
             <h2 class="contact-welcome white "> Eco friendly dyes.</h2>
             <p class="white"> Caring for Cambodian rivers.</p>
@@ -127,7 +127,7 @@ $container = get_theme_mod( 'understrap_container_type' );
           </div>
         </div>
         <!-- Slide Three - Set the background image for this slide in the line below -->
-        <div class="carousel-item" style="background-image: url('http://artisantextiles.local/wp-content/uploads/2019/08/Slider2.jpg')">
+        <div class="carousel-item" style="background-image: url('/wp-content/uploads/2019/08/Slider2.jpg')">
           <div class="carousel-caption  text-right">
             <h2 class="contact-welcome white">Fairtrade values. </h2>
             <p class="white">Caring for the women who create our textiles.</p>
