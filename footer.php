@@ -24,6 +24,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 		<div class="row">
       <div class="col-12 col-sm-6 col-md-6 col-lg-4">
         <h3 class="footer-heading text-center text-sm-left"> Sign up for our Newsletter</h3>
+        <p>Please sign up to our newsletter to be the first to know about our special offers, new products, competitions and behind the scenes updates.</p>
 
         <?php get_template_part( 'global-templates/newsletter', 'signup' ); ?>
       </div>

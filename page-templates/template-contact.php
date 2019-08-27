@@ -16,6 +16,9 @@ $container = get_theme_mod( 'understrap_container_type' );
 $email = get_field('email');
 $phone = get_field('phone');
 $welcome = get_field('contact_welcome');
+$contact_shortcode = get_field('contact_form_shortcode');
+$image = get_field("image");
+
 ?>
 
 <div class="wrapper ptb-std" id="page-wrapper">
@@ -31,11 +34,12 @@ $welcome = get_field('contact_welcome');
     <div class="container">
       <div class="row">
         <div class="col-12">
-          <h1 class="contact-header">Contact</h1>
+          <h1 class="contact-header"><?php the_title() ?></h1>
         </div>
   		   <div class="col-md-6">
           <p class="contact-welcome"> <?php echo $welcome; ?> </p>
           <?php the_field('contact'); ?>
+          
           <div class="sep-wrapper "><hr class="sep" /></div>
             <div class="contact-deets">
               <?php if($email) { ?>
@@ -43,9 +47,10 @@ $welcome = get_field('contact_welcome');
                 <?php understrap_tolka_show_social_icons() ?>
               <?php } ?>
             </div>
+            <img src="<?php echo $image[url] ?>" alt="<?php echo $image[alt] ?>" >
            </div>
           <div class="col-md-6">
-            <?php echo do_shortcode( '[contact-form-7 id="8" title="Main contact form"]' ); ?>
+            <?php echo do_shortcode( $contact_shortcode ); ?>
           </div>
       </div>
     </div>

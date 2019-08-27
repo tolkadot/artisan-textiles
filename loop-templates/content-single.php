@@ -34,8 +34,14 @@ if ( ! defined( 'ABSPATH' ) ) {
 				
 				<div class="col-12 col-md-6">
 				<div class="entry-content">
-
+			
+					<?php $url = get_field('link_to_collection') ?>
+					<p class="pull-text"><?php the_field('pull_text')?></p>
 					<?php the_content(); ?>
+
+					<p class="py-3" style="text-align: center;">
+						<a class="btn-secondary text-decoration-none" href="<?php echo $url ?>">See Collection</a>
+					</p>
 
 					<?php
 					wp_link_pages(

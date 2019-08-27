@@ -113,3 +113,9 @@ box-shadow: 0 2px 2px -2px rgba(163, 180, 162, .2);
     line-height: $size;
     line-height: calculateRem($size);
   }
+
+  @mixin background {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
