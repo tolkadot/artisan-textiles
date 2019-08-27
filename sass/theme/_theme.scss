@@ -210,7 +210,7 @@ ul.dropdown-menu {
   border-top: 3px solid #a3b4a2;
   border: 0;
   border-radius: 0;
-  z-index: 1;
+  z-index: 3;
   @include transition-time(1s);
    li a {
    padding: .5rem .5rem;
@@ -327,7 +327,7 @@ label {
 }
 }
 
-
+@media (min-width: 1000px) {
 .nav-moving-target {
     display: block;
     position: absolute;
@@ -338,6 +338,7 @@ label {
     z-index: 9;
     pointer-events: none;
   }
+}
   .navbar-nav {
     li a.nav-link:hover,
     li.alive a.nav-link{
@@ -432,4 +433,17 @@ z-index: 1;
     min-height: 650px;
     background-size: cover;
   }
+}
+
+.grecaptcha-badge {
+  display: none !important;
+}
+
+
+#seed-csp4-content img {
+  display: none;
+}
+
+h1{
+  color: pink;
 }
