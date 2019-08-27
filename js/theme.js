@@ -7755,12 +7755,24 @@ var toggleAffix = function(affixElement, scrollElement, wrapper) {
 // };
 
 //Open menu dropdown on hover
-$('ul#main-menu>li.dropdown').hover(function() {
-  $(this).find('.dropdown-menu').fadeIn(300);
-}, function() {
-  $(this).find('.dropdown-menu').fadeOut(300);
-});
+// $('ul#main-menu>li.dropdown').hover(function() {
+//   console.log($(this));
+//   $(this).find('.dropdown-menu').fadeIn(300);
+// }, function() {
+//   $(this).find('.dropdown-menu').fadeOut(300);
+// });
 
+$("ul#main-menu>li.dropdown").hover(
+  //handler in
+  function () {
+      $('>.dropdown-menu', this).stop(true, true).fadeIn(300);
+      $(this).addClass('open');
+  },
+  //handler out
+  function () {
+      $('>.dropdown-menu', this).stop(true, true).fadeOut(100);
+      $(this).removeClass('open');
+  });
 
 //Moving nav underline
     var target = document.querySelector(" .nav-moving-target");
