@@ -1,0 +1,43 @@
+{
+    "key": "group_5d6cecab32af1",
+    "title": "Product Meta",
+    "fields": [
+        {
+            "key": "field_5d6cecb006215",
+            "label": "product meta",
+            "name": "product_meta",
+            "type": "wysiwyg",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "Handmade\r\nCambodian Traditional Weaving Techniques\r\nFair Trade Practices\r\nEthical & Sustainable\r\nVegan Friendly\r\n100% Cotton\r\nEco Friendly Dyes\r\n130cms x 190cms\r\nUnisex\r\nCold Hand Wash Machine Cycle Using Shampoo\r\nDry In Shade",
+            "tabs": "all",
+            "toolbar": "full",
+            "media_upload": 1,
+            "delay": 0
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "product"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "acf_after_title",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": 1,
+    "description": "",
+    "modified": 1567420004
+}
