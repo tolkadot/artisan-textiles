@@ -32,7 +32,7 @@ $container = get_theme_mod( 'understrap_container_type' );
       <div class="container-fluid top-bar bg-primary-opacity">
           <div class="container">
             <div class=" row">
-              <div class="col-12 d-flex justify-content-center p-0  ">
+              <div class="col-12 d-flex justify-content-center p-0">
                 <p class="top-bar-font  text-uppercase mb-0"> <span class="mr-2"><i class="fa fa-plane" aria-hidden="true"></i></span>Free Shipping on every order</p>
               </div>
             </div>
