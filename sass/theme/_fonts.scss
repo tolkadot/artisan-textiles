@@ -56,8 +56,14 @@ h1.product_title {
   line-height: 1.1;
 }
 
-.contact-welcome, 
-h1.woocommerce-products-header__title.page-title, 
+.top-bar-font {
+	font-size: .8rem;
+	letter-spacing: .2rem;
+	padding: 3px 0px;
+}
+
+.contact-welcome,
+h1.woocommerce-products-header__title.page-title,
 .intro-heading {
   font-family: $light-font;
   @include fontSize(30px);
@@ -92,8 +98,8 @@ h1.woocommerce-products-header__title.page-title,
     line-height: 1.2;
     letter-spacing: .01rem;
   }
-  .contact-welcome, 
-  h1.woocommerce-products-header__title.page-title, 
+  .contact-welcome,
+  h1.woocommerce-products-header__title.page-title,
   .intro-heading {
     @include fontSize(45px);
     @include lineHeight(47px);
@@ -122,10 +128,10 @@ h1.woocommerce-products-header__title.page-title,
 }
 
 //buttons
-.btn-outline-primary, 
-.wpcf7 input[type=submit], 
-button, 
-.btn-block, 
+.btn-outline-primary,
+.wpcf7 input[type=submit],
+button,
+.btn-block,
 .btn-primary {
   @include button;
 }
