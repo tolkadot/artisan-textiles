@@ -27,19 +27,19 @@ $container = get_theme_mod( 'understrap_container_type' );
 <div class="site" id="page">
 
 
-<!-- <?php if(is_front_page()){ ?>
+<?php if(is_front_page()){ ?>
 
-      <div class="container-fluid top-bar bg-primary">
+      <div class="container-fluid top-bar bg-primary-opacity">
           <div class="container">
             <div class=" row">
-              <div class="col-12 d-flex justify-content-between  ">
-                <p><a class="white" href="#"> Free Shipping for every order</a></p>
-                <div class="d-none d-lg-block white"><?php tolka_wc_show_cart() ?> </div>
+              <div class="col-12 d-flex justify-content-center p-0  ">
+                <p class="top-bar-font  text-uppercase mb-0"> <span class="mr-2"><i class="fa fa-plane" aria-hidden="true"></i></span>Free Shipping on every order</p>
               </div>
             </div>
         </div>
-      </div>
-      <?php } ?> -->
+			</div>
+
+      <?php } ?>
 	<!-- ******************* The Navbar Area ******************* -->
 
 	<div id="wrapper-navbar" class="w-100 " itemscope itemtype="http://schema.org/WebSite">
