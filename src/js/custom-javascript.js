@@ -1,7 +1,7 @@
 jQuery( document ).ready( function( $ ) {
 
 
-//sticky header 
+//sticky header
 var toggleAffix = function(affixElement, scrollElement, wrapper) {
   var height = affixElement.outerHeight(),
         top = wrapper.offset().top;
@@ -30,13 +30,13 @@ var toggleAffix = function(affixElement, scrollElement, wrapper) {
   });
 
 
-//change logo size on scroll  
+//change logo size on scroll
 // window.onscroll = function() {
 //   var width = $(window).width();
 //   if (width > 768){
 //   if (document.body.scrollTop > 65 || document.documentElement.scrollTop > 65) {
 //     $('.logo-box').css('width', '200px');
-   
+
 //   } else {
 //     $('.logo-box').css('width', '450px');
 
@@ -143,8 +143,13 @@ jQuery('.woocommerce div.product form.cart button:last-child').click(function(e)
 			data:'action=crispshop_add_cart_single&product_id=' + product_id + '&variation_id=' + variation_id + '&quantity=' + quantity,
 
 			success:function(results) {
-        console.log(results);
-        jQuery('span.header-cart-count span').html(results);
+
+				jQuery('span.header-cart-count span').html(results);
+				if (jQuery('.cart_updated_ajax').length){	}
+					else {
+						jQuery('form.cart').after('<a class="btn-secondary cart_updated_ajax" href="' + wc_add_to_cart_params.cart_url + '">View Cart</a>');
+					}
+
 			}
 		});
 	} else {
@@ -155,7 +160,10 @@ jQuery('.woocommerce div.product form.cart button:last-child').click(function(e)
 
 			success:function(results) {
 				jQuery('span.header-cart-count span').html(results);
-        console.log(results, "results2");
+				if (jQuery('.cart_updated_ajax').length){	}
+				else {
+					jQuery('form.cart').after('<p><a class="btn-secondary cart_updated_ajax" href="' + wc_add_to_cart_params.cart_url + '">View Cart</a></p>');
+				}
 			}
 		});
 	}
