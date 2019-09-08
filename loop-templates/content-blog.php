@@ -11,7 +11,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 ?>
 <?php $author = get_the_author(); r ?>
 <div class="col-md-6" >
-  <a href="<?php get_permalink() ?>">
+  <a href="<?php the_permalink() ?>">
     <article <?php post_class("w-100"); ?> id="post-<?php the_ID(); ?>">
 
       <?php echo get_the_post_thumbnail( $post->ID, 'large' ,array( 'class' => 'w-100' )); ?>
