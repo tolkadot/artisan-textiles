@@ -11,13 +11,13 @@
   min-width: 15px;
     &.plus {
     top: 3px;
-    background-image: url("/wp-content/themes/understrap-tolka-artisan/fonts/chevron-up.svg");
+    background-image: url("..fonts/chevron-up.svg");
     background-position: center;
     background-repeat: no-repeat;
     }
     &.minus {
     bottom: 3px;
-    background-image: url("/wp-content/themes/understrap-tolka-artisan/fonts/chevron-down.svg");
+		background-image: url("../fonts/chevron-down.svg");
     background-position: center;
     background-repeat: no-repeat;
     }
